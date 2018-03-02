@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+      <metadata>
+      <id>BlackMirror.Sync.Worker.Host</id>
+      <version>NUGET_VERSION</version>
+      <title>BlackMirror.Sync.Worker.Host</title>
+      <authors>Pawel Rosinski</authors>
+      <owners>Pawel Rosinski</owners>
+      <projectUrl>https://github.com/Rosiv/BlackMirror</projectUrl>
+      <requireLicenseAcceptance>false</requireLicenseAcceptance>
+      <description>BlackMirror.Sync.Worker.Host</description>
+      <releaseNotes>Shiny thing make it all better.</releaseNotes>
+      <copyright></copyright>
+      <dependencies/>
+      </metadata>
+      <files>
+      <file src="MSI_FILENAME" target="" />
+      <file src="Deploy.ps1" target="Deploy.ps1" />
+      </files>
+    </package>

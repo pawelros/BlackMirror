@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{30043C23-AF46-4DD5-A7E9-C0D7B387D80B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BlackMirror.HttpClient</RootNamespace>
+    <AssemblyName>BlackMirror.HttpClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.2.5.0\lib\net45\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="BlackMirrorHttpClient.cs" />
+    <Compile Include="HttpClientBase.cs" />
+    <Compile Include="IBlackMirrorHttpClient.cs" />
+    <Compile Include="Mirror\IMirrorClient.cs" />
+    <Compile Include="Mirror\MirrorClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\IReflectionClient.cs" />
+    <Compile Include="Reflection\ReflectionClient.cs" />
+    <Compile Include="Sync\ISyncClient.cs" />
+    <Compile Include="Sync\SyncClient.cs" />
+    <Compile Include="X509StoreCertificateProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlackMirror.Configuration\BlackMirror.Configuration.csproj">
+      <Project>{4BC7FDC6-52D4-4194-A540-E42E9204394C}</Project>
+      <Name>BlackMirror.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Dto\BlackMirror.Dto.csproj">
+      <Project>{80539810-5CCF-487C-82F4-85F5B91775DE}</Project>
+      <Name>BlackMirror.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Interfaces\BlackMirror.Interfaces.csproj">
+      <Project>{FF1BE885-9EB5-4214-ADEF-9632B1492105}</Project>
+      <Name>BlackMirror.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Models\BlackMirror.Models.csproj">
+      <Project>{C76C29DB-5C74-4CCA-9A4E-CA95403C0DC7}</Project>
+      <Name>BlackMirror.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

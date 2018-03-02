@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #303030;
+}
+.header-logo  {
+  background-color: #0097a7 !important;
+}
+
+.nestedPrimary {
+  font-size: 13;
+  position: 'absolute'; 
+  top: 5
+}
+
+.sync-status-container {
+  position: 'relative',
+}
+.sync-status-refresh {
+  position: 'absolute',
+}
+.sync-status-progress {
+  position: 'relative';
+  left: 1;
+  top: 2;
+}
+.sync-status-icon {
+  position: 'absolute';
+  left: -55;
+  top: 5;
+}

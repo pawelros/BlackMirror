@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF9096D6-A211-4238-A5D1-E5E6474F2D75}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BlackMirror.Sync</RootNamespace>
+    <AssemblyName>BlackMirror.Sync</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.2.5.0\lib\net45\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="SynchronizationProcess.cs" />
+    <Compile Include="SyncService.cs" />
+    <Compile Include="ISyncService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlackMirror.Configuration\BlackMirror.Configuration.csproj">
+      <Project>{4BC7FDC6-52D4-4194-A540-E42E9204394C}</Project>
+      <Name>BlackMirror.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Dto\BlackMirror.Dto.csproj">
+      <Project>{80539810-5CCF-487C-82F4-85F5B91775DE}</Project>
+      <Name>BlackMirror.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Interfaces\BlackMirror.Interfaces.csproj">
+      <Project>{FF1BE885-9EB5-4214-ADEF-9632B1492105}</Project>
+      <Name>BlackMirror.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.MirrorStore.MongoDB\BlackMirror.MirrorStore.MongoDB.csproj">
+      <Project>{7AFFF2A5-1A08-45BD-84EB-4E353DCD2F17}</Project>
+      <Name>BlackMirror.MirrorStore.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Models\BlackMirror.Models.csproj">
+      <Project>{C76C29DB-5C74-4CCA-9A4E-CA95403C0DC7}</Project>
+      <Name>BlackMirror.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Svc.Git\BlackMirror.Svc.Git.csproj">
+      <Project>{f87349b2-b831-4dc7-977a-92257904f53c}</Project>
+      <Name>BlackMirror.Svc.Git</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Svc.Svn\BlackMirror.Svc.Svn.csproj">
+      <Project>{0567BBC6-0AAC-47ED-B328-EB29A9BF846F}</Project>
+      <Name>BlackMirror.Svc.Svn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Svc.UserStore.MongoDB\BlackMirror.Svc.UserStore.MongoDB.csproj">
+      <Project>{384008FC-7688-4A7F-9EC6-9313C1A76F7A}</Project>
+      <Name>BlackMirror.Svc.UserStore.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.SvcRepositoryStore.MongoDB\BlackMirror.SvcRepositoryStore.MongoDB.csproj">
+      <Project>{4199D75E-734D-4876-8ADE-8EAA497A1003}</Project>
+      <Name>BlackMirror.SvcRepositoryStore.MongoDB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

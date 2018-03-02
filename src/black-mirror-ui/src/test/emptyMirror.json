@@ -1,0 +1,138 @@
+{
+    "Id": "",
+    "Name": "",
+    "SourceRepository": {
+        "Id": "",
+        "Type": "git",
+        "Name": "",
+        "Uri": "",
+        "CheckoutUser": {
+            "Id": "",
+            "Name": "",
+            "Email": "",
+            "RepositoryCredentials": [
+                {
+                    "Login": "",
+                    "RepositoryType": "git",
+                    "AllowedRepositories": [
+                        "ALL"
+                    ]
+                },
+                {
+                    "Login": "",
+                    "RepositoryType": "svn",
+                    "AllowedRepositories": [
+                        "ALL"
+                    ]
+                }
+            ]
+        },
+        "PushUser": {
+            "Id": "",
+            "Name": "",
+            "Email": "",
+            "RepositoryCredentials": [
+                {
+                    "Login": "",
+                    "RepositoryType": "git",
+                    "AllowedRepositories": [
+                        "ALL"
+                    ]
+                },
+                {
+                    "Login": "",
+                    "RepositoryType": "svn",
+                    "AllowedRepositories": [
+                        "ALL"
+                    ]
+                }
+            ]
+        },
+        "MappedCheckoutCredentials": {
+            "Login": "",
+            "RepositoryType": "git",
+            "AllowedRepositories": [
+                "ALL"
+            ]
+        }
+    },
+    "TargetRepository": {
+        "Id": "",
+        "Type": "svn",
+        "Name": "",
+        "Uri": "",
+        "DefaultCommitMessagePrefix": "",
+        "CheckoutUser": {
+            "Id": "",
+            "Name": "",
+            "Email": "",
+            "RepositoryCredentials": [
+                {
+                    "Login": "",
+                    "RepositoryType": "git",
+                    "AllowedRepositories": [
+                        "ALL"
+                    ]
+                },
+                {
+                    "Login": "",
+                    "RepositoryType": "svn",
+                    "AllowedRepositories": [
+                        "ALL"
+                    ]
+                }
+            ]
+        },
+        "PushUser": {
+            "Id": "",
+            "Name": "",
+            "Email": "",
+            "RepositoryCredentials": [
+                {
+                    "Login": "",
+                    "RepositoryType": "git",
+                    "AllowedRepositories": [
+                        "ALL"
+                    ]
+                },
+                {
+                    "Login": "",
+                    "RepositoryType": "svn",
+                    "AllowedRepositories": [
+                        "ALL"
+                    ]
+                }
+            ]
+        },
+        "MappedCheckoutCredentials": {
+            "Login": "",
+            "RepositoryType": "svn",
+            "AllowedRepositories": [
+                "ALL"
+            ]
+        }
+    },
+    "Owner": {
+        "Id": "",
+        "Name": "x",
+        "Email": "",
+        "RepositoryCredentials": [
+            {
+                "Login": "",
+                "RepositoryType": "git",
+                "AllowedRepositories": [
+                    "ALL"
+                ]
+            },
+            {
+                "Login": "",
+                "RepositoryType": "svn",
+                "AllowedRepositories": [
+                    "ALL"
+                ]
+            }
+        ]
+    },
+    "CreationTime": "2017-07-24T12:12:40.113Z",
+    "Status": "Unknown"
+}

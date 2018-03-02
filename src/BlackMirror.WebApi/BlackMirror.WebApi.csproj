@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5FA6100-78C1-4726-87D9-F24F692D7B5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BlackMirror.WebApi</RootNamespace>
+    <AssemblyName>BlackMirror.WebApi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy, Version=1.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nancy.1.4.4\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.MSOwinSecurity, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nancy.MSOwinSecurity.2.0.0\lib\net45\Nancy.MSOwinSecurity.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Owin, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nancy.Owin.1.4.1\lib\net40\Nancy.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Serialization.JsonNet, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nancy.Serialization.JsonNet.1.4.1\lib\net40\Nancy.Serialization.JsonNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.2.5.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Events\EventHandler.cs" />
+    <Compile Include="Modules\EventsModule.cs" />
+    <Compile Include="Modules\MirrorModule.cs" />
+    <Compile Include="Modules\ReflectionModule.cs" />
+    <Compile Include="Modules\RepositoryModule.cs" />
+    <Compile Include="Modules\SyncModule.cs" />
+    <Compile Include="Modules\UserModule.cs" />
+    <Compile Include="Modules\WebApiModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlackMirror.Configuration\BlackMirror.Configuration.csproj">
+      <Project>{4BC7FDC6-52D4-4194-A540-E42E9204394C}</Project>
+      <Name>BlackMirror.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Dto\BlackMirror.Dto.csproj">
+      <Project>{80539810-5CCF-487C-82F4-85F5B91775DE}</Project>
+      <Name>BlackMirror.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Interfaces\BlackMirror.Interfaces.csproj">
+      <Project>{FF1BE885-9EB5-4214-ADEF-9632B1492105}</Project>
+      <Name>BlackMirror.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.LogStore.MongoDB\BlackMirror.LogStore.MongoDB.csproj">
+      <Project>{F143BC9C-3D3C-496A-A289-D95F4567A768}</Project>
+      <Name>BlackMirror.LogStore.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.MirrorStore.MongoDB\BlackMirror.MirrorStore.MongoDB.csproj">
+      <Project>{7AFFF2A5-1A08-45BD-84EB-4E353DCD2F17}</Project>
+      <Name>BlackMirror.MirrorStore.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Models\BlackMirror.Models.csproj">
+      <Project>{C76C29DB-5C74-4CCA-9A4E-CA95403C0DC7}</Project>
+      <Name>BlackMirror.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.ReflectionStore.MongoDB\BlackMirror.ReflectionStore.MongoDB.csproj">
+      <Project>{E0F03598-2224-499C-87F2-7ECDBD1A4F8C}</Project>
+      <Name>BlackMirror.ReflectionStore.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Svc.UserStore.MongoDB\BlackMirror.Svc.UserStore.MongoDB.csproj">
+      <Project>{384008FC-7688-4A7F-9EC6-9313C1A76F7A}</Project>
+      <Name>BlackMirror.Svc.UserStore.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.SvcRepositoryStore.MongoDB\BlackMirror.SvcRepositoryStore.MongoDB.csproj">
+      <Project>{4199D75E-734D-4876-8ADE-8EAA497A1003}</Project>
+      <Name>BlackMirror.SvcRepositoryStore.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.SyncStore.MongoDB\BlackMirror.SyncStore.MongoDB.csproj">
+      <Project>{4843B143-646B-4792-B411-7C9A5211A88D}</Project>
+      <Name>BlackMirror.SyncStore.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackMirror.Sync\BlackMirror.Sync.csproj">
+      <Project>{CF9096D6-A211-4238-A5D1-E5E6474F2D75}</Project>
+      <Name>BlackMirror.Sync</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TradeR.Web.Extensions\TradeR.Web.Extensions.csproj">
+      <Project>{2ABA63FC-3BE7-4331-874F-02E741F15CBF}</Project>
+      <Name>TradeR.Web.Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
